@@ -1,17 +1,21 @@
-var paragraph = document.getElementById('content')
-var button = document.getElementById('show-more')
-console.log(paragraph.innerHTML);
+function setUpEvents() {
 
-button.onclick = function() {
+    var paragraph = document.getElementById('content')
+    var button = document.getElementById('show-more')
 
-    if (paragraph.className == "") {
-        paragraph.className = "open"
-        button.innerHTML = "Show Less"
-    } else {
-        paragraph.className = ""
-        button.innerHTML = "Show More"
+    button.onclick = function() {
+
+        if (paragraph.className == "") {
+            paragraph.className = "open"
+            button.innerHTML = "Show Less"
+        } else {
+            paragraph.className = ""
+            button.innerHTML = "Show More"
+
+        }
 
     }
-
 }
-console.log(paragraph.className);
+window.onload = function() {
+    setUpEvents()
+}
