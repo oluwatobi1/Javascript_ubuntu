@@ -6,8 +6,10 @@ button.onclick = function() {
 
     if (paragraph.className == "") {
         paragraph.className = "open"
+        button.innerHTML = "Show Less"
     } else {
         paragraph.className = ""
+        button.innerHTML = "Show More"
 
     }
 
