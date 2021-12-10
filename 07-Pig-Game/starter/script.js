@@ -21,7 +21,8 @@ document.querySelector('#roll-dice-btn').addEventListener('click', function() {
         currentScore = 0
         document.querySelector('#current--' + activePlayer).textContent = currentScore;
 
-        document.getElementsByClassName('player player--' + activePlayer + " player--active")[0].className = "player player--" + activePlayer
+        document.querySelector('.player--0').classList.toggle('player--active');
+        document.querySelector('.player--1').classList.toggle('player--active');
         activePlayer = Math.abs(activePlayer - 1)
         document.getElementsByClassName('player player--' + activePlayer)[0].className = "player player--" + activePlayer + " player--active"
 
