@@ -14,5 +14,5 @@ const frequencyCounter = (sentence) => {
     console.log("results ", results);
 }
 
-word = "THis aaaaaAAAAaaaa";
+word = "THis aaaaaAAAAaaaabb";
 console.log(frequencyCounter(word))
