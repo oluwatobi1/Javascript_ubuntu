@@ -13,3 +13,17 @@ function interviewQuestion(job) {
         }
     }
 }
+
+var designerQuestion = interviewQuestion('designer')
+designerQuestion("Samuel")
+
+var teacherQuestion = interviewQuestion('teacher')
+teacherQuestion("Helen")
+
+var randomQuestion = interviewQuestion("student")
+randomQuestion("Nonso")
+
+
+interviewQuestion('teacher')('Matthew')
+interviewQuestion('nurse')('Afo')
+interviewQuestion('linguist')('Helen')
