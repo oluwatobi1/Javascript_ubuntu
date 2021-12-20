@@ -17,16 +17,12 @@ function interviewQuestion(job) {
     var b = " how long have you been teaching?"
     var c = " what is your occupation?"
 
-    if (job === "designer") {
-        return function(name) {
+    return function(name) {
+        if (job === "designer") {
             console.log(name + a);
-        };
-    } else if (job === "teacher") {
-        return function(name) {
+        } else if (job === "teacher") {
             console.log(name + b);
-        };
-    } else {
-        return function(name) {
+        } else {
             console.log(name + c);
         };
     };
