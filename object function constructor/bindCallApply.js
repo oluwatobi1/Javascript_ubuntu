@@ -14,6 +14,34 @@ var john = {
                 " I am a ", this.job + ". Have a lovely ", timeOfDay);
         }
     }
-}
+};
 
-john.presentation('formal', "morning")
+john.presentation('formal', "morning");
+john.presentation('friendly', "afternoon");
+
+
+var emily = {
+    name: "emily",
+    age: 45,
+    job: "designer"
+};
+
+john.presentation.call(emily, "friendly", "afternoon")
+
+var saul = {
+    name: "Saul",
+    age: 23,
+    job: "paster"
+};
+
+john.presentation.call(saul, "formal", 'evening')
+
+john.presentation.apply(emily, ['formal', "evening"])
+
+// using bind for carrying 
+
+var johnFormal = john.presentation.bind(john, "formal")
+
+johnFormal('night')
+var emilyFriendly = john.presentation.bind(emily, "friendly");
+emilyFriendly('evening')
