@@ -44,4 +44,7 @@ var johnFormal = john.presentation.bind(john, "formal")
 
 johnFormal('night')
 var emilyFriendly = john.presentation.bind(emily, "friendly");
-emilyFriendly('evening')
+emilyFriendly('evening');
+
+
+// use binding for
