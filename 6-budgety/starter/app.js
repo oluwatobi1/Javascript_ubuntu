@@ -23,6 +23,30 @@ var UIController = (function() {
 
 var budgetController = (function() {
 
+    var Expense = function(id, description, amount) {
+        this.id = id;
+        this.description = description;
+        this.amount = amount;
+    };
+
+    var Income = function(id, description, amount) {
+        this.id = id;
+        this.description = description;
+        this.amount = amount;
+    };
+
+
+    var allData = {
+        allItems: {
+            inc: [],
+            exp: []
+        },
+        total: {
+            inc: 0,
+            exp: 0
+        },
+    }
+
 })();
 
 
