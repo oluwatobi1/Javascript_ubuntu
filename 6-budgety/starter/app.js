@@ -1,33 +1,55 @@
 var UIController = (function() {
-    var num = 23;
-
-    function add(item) {
-        var sum = num + item;
+    var DOMstrings = {
+        inputType: ".add__type",
+        inputDescription: ".add__description",
+        inputValue: ".add__value",
+        addButton: ".add__btn"
     };
 
     return {
-        publicItem: function(a) {
-            return add(a);
+        getInputs: function() {
+            return {
+                type: document.querySelector(DOMstrings.inputType).value,
+                description: document.querySelector(DOMstrings.inputDescription).value,
+                value: document.querySelector(DOMstrings.inputValue).value,
+            }
+        },
+        getDOMStrings: function() {
+            return DOMstrings
         }
-    };
+    }
 
 })();
 
 var budgetController = (function() {
-    console.log(
-        'This is the budget controller'
-    )
+
 })();
 
 
 var controller = (function(uiCtrl, bgtCtrl) {
+    function setupEventListeners() {
+        var DOM = uiCtrl.getDOMStrings()
+        var ctrlAddItem = function() {
+            console.log(uiCtrl.getInputs());
+        };
 
-    var x = uiCtrl.publicItem(3)
+
+        document.querySelector(DOM.addButton).addEventListener('click', ctrlAddItem);
+        document.addEventListener('keypress', function(event) {
+            if (event.key === "Enter") {
+                ctrlAddItem();
+            };
+        });
+    };
+
 
     return {
-        testItem: function() {
-            console.log("this is the; ", x)
+        init: function() {
+            console.log("Application has started.");
+            setupEventListeners();
         }
     }
 
 })(UIController, budgetController);
+
+controller.init();
