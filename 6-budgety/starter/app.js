@@ -34,8 +34,6 @@ var budgetController = (function() {
         this.description = description;
         this.amount = amount;
     };
-
-
     var allData = {
         allItems: {
             inc: [],
@@ -45,6 +43,26 @@ var budgetController = (function() {
             inc: 0,
             exp: 0
         },
+    };
+
+    return {
+        addItems: function(type, des, val) {
+            var newItem, ID;
+
+            if (allData.allItems[type].length < 0) {
+                ID = 0
+            } else {
+                ID = allData.allItems[type][allData.allItems[type].length - 1].id + 1
+            }
+
+            if (type === "inc") {
+                newItem = Income(ID, des, val)
+            } else if (type === "exp") {
+                newItem = Expense(ID, des, val)
+            };
+            allData.allItems[type].push(newItem);
+            return newItem;
+        }
     }
 
 })();
